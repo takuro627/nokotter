@@ -7,15 +7,16 @@
   justify-content: center;
   background-image: url(140147.png);
   background-size: 100px;
+  height: 100vh;
 }
 
 .side {
-  height: 100vh;
+  // height: 100vh;
   width: 90px;
   background-color: red;
 }
 .main {
-  height: 100vh;
+  // height: 100vh;
   width: 60%;
   background-color: green;
   overflow: scroll;
