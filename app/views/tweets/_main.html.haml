@@ -1,0 +1,10 @@
+.main
+  .main__tweet
+    - @tweets.each do |tweet|
+      .main__tweet__content
+        .main__tweet__content__image
+          = image_tag tweet.image
+        .main__tweet__content__text
+          = simple_format(tweet.text)
+        .main__tweet__content__name
+          = tweet.name
