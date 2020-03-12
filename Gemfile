@@ -68,3 +68,5 @@ gem 'sprockets', '3.7.2'
 gem 'haml-rails'
 
 gem 'font-awesome-sass'
+
+gem 'devise'
