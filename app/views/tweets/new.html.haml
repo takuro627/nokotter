@@ -1,5 +1,6 @@
 .wrapper
   .side
+    = render "side"
   .main
     = form_with(model: @tweet, local: true) do |form|
       %h3

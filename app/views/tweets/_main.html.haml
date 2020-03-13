@@ -4,19 +4,21 @@
       .main__tweet__content
         .main__tweet__content__image
           = image_tag tweet.image
-          .main__tweet__content__image__more
-            -# = image_tag url(arrow_top.png)
-            %ul.more_list
-              %li
-                = link_to '詳細', "/tweets/#{tweet.id}", method: :get
-              - if user_signed_in? && current_user.id == tweet.user_id
-                %li
-                  = link_to '削除', "/tweets/#{tweet.id}", method: :delete
-                %li
-                  = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get
-
         .main__tweet__content__text
           = simple_format(tweet.text)
+        .main__tweet__content__more
+          %ul.more_list
+            %li
+              = link_to "/tweets/#{tweet.id}", method: :get do
+                =icon('fa','align-justify')
+            - if user_signed_in? && current_user.id == tweet.user_id
+              %li
+                = link_to "/tweets/#{tweet.id}", method: :delete do
+                  =icon('fas','trash-alt')
+              %li
+                = link_to "/tweets/#{tweet.id}/edit", method: :get do
+                  =icon('fas','edit')
+
         .main__tweet__content__name
           %a{:href => "/users/#{tweet.user.id}"}
             %span 投稿者

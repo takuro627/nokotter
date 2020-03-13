@@ -1,8 +1,30 @@
-.contents.row
-  %p
-    = @nickname
-    さんの投稿一覧
-  - @tweets.each do |tweet|
-    .content_post{:style => "background-image: url(#{tweet.image});"}
-      = simple_format(tweet.text)
-
+-# .contents.row
+-#   %p
+-#     = @nickname
+-#     さんの投稿一覧
+-#   - @tweets.each do |tweet|
+-#     .content_post{:style => "background-image: url(#{tweet.image});"}
+-#       = simple_format(tweet.text)
+.wrapper
+  .side
+    = render"side"
+  .main
+    .main__tweet
+      %p
+      = @nickname
+      さんの投稿一覧
+      - @tweets.each do |tweet|
+        .main__tweet__content
+          .main__tweet__content__image
+            = image_tag tweet.image
+          .main__tweer__content__text
+            = simple_format(tweet.text)
+          .main__tweet__content__more
+            %ul.more_list
+              - if user_signed_in? && current_user.id == tweet.user_id
+                %li
+                  = link_to  "/tweets/#{tweet.id}", method: :delete do
+                    =icon('fas','trash-alt')
+                %li
+                  = link_to  "/tweets/#{tweet.id}/edit", method: :get do
+                    =icon('fas','edit')
