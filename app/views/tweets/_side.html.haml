@@ -1,7 +1,7 @@
 .side
   - if user_signed_in?
     %ul.side__list
-      %link_to
+      %li
         = link_to "/users/#{current_user.id}" do
           = icon('fas', 'home', class:"icon")
       %li
@@ -16,4 +16,8 @@
         = icon('fas', 'sign-in-alt', class:"icon")
       = link_to new_user_registration_path, class: 'post' do
         = icon('fas', 'user-edit', class:"icon")
-      
+  - if current_user.try(:admin?)
+    %ul.side__list
+      %li
+        = link_to "/admin" do
+          = icon('fas', 'key', class:"icon")
