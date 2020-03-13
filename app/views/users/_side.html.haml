@@ -16,3 +16,6 @@
         = icon('fas', 'sign-in-alt', class:"icon")
       = link_to new_user_registration_path, class: 'post' do
         = icon('fas', 'user-edit', class:"icon")
+  - if current_user.try(:admin?)
+    = link_to "/admin" do
+      = icon('fad','lock-alt',class:"icon")
