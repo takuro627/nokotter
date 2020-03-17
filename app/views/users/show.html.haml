@@ -20,11 +20,8 @@
           .main__tweer__content__text
             = simple_format(tweet.text)
           .main__tweet__content__more
-            %ul.more_list
-              - if user_signed_in? && current_user.id == tweet.user_id
-                %li
-                  = link_to  "/tweets/#{tweet.id}", method: :delete do
-                    =icon('fas','trash-alt')
-                %li
-                  = link_to  "/tweets/#{tweet.id}/edit", method: :get do
-                    =icon('fas','edit')
+            - if user_signed_in? && current_user.id == tweet.user_id
+              = link_to  "/tweets/#{tweet.id}", class:'main-icon', method: :delete, data: { confirm: '本当に削除しますか？' } do
+                =icon('fas','trash-alt')
+              = link_to  "/tweets/#{tweet.id}/edit", class:'main-icon', method: :get do
+                =icon('fas','edit')

@@ -1,9 +1,12 @@
 .side
   - if user_signed_in?
     %ul.user_nav.grid-6
-      %link_to
+      %li
+        = link_to "/", class: 'main-icon' do
+          =icon('fa', 'home', class:"icon")
+      %li
         = link_to "/users/#{current_user.id}" do
-          = icon('fas', 'home', class:"icon")
+          = icon('far', 'smile', class:"icon")
       %li
         = link_to destroy_user_session_path, method: :delete do
           = icon('fas', 'sign-out-alt', class:"icon")       

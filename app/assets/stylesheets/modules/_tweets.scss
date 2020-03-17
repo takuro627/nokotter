@@ -11,22 +11,41 @@
 }
 
 .side {
-  // height: 100vh;
   width: 90px;
   background-color: red;
   text-align: center;
 }
+
 .main {
-  // height: 100vh;
   width: 60%;
   background-color: green;
   overflow: scroll;
+  
   &__tweet {
     &__content {
       text-align: center;
       margin: 10px 20px;
       height: auto;
       width: auto;
+      &__more {
+        .main-icon {
+          font-size: 30px;
+          -webkit-text-fill-color: White;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__new {
+    &__image {
+      #tweet_image {
+        width: 100%;
+      }
+    }
+    &__text{
+      #tweet_image {
+        width: 100%;
+      }
     }
   }
 }

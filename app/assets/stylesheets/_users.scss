@@ -14,12 +14,12 @@
 }
 
 .side {
-  // height: 100vh;
+  height: 100vh;
   width: 90px;
   background-color: red;
 }
 .main {
-  // height: 100vh;
+  height: 100vh;
   width: 60%;
   background-color: green;
   overflow: scroll;
@@ -29,6 +29,13 @@
       margin: 10px 20px;
       height: auto;
       width: auto;
+      &__more {
+        .main-icon {
+          font-size: 20px;
+          -webkit-text-fill-color: White;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

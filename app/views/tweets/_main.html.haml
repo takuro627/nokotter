@@ -1,23 +1,21 @@
 .main
   .main__tweet
     - @tweets.each do |tweet|
+      %a{:href => "https://www.google.co.jp"}
       .main__tweet__content
+        
         .main__tweet__content__image
           = image_tag tweet.image
         .main__tweet__content__text
           = simple_format(tweet.text)
         .main__tweet__content__more
-          %ul.more_list
-            %li
-              = link_to "/tweets/#{tweet.id}", method: :get do
-                =icon('fa','align-justify')
-            - if user_signed_in? && current_user.id == tweet.user_id
-              %li
-                = link_to "/tweets/#{tweet.id}", method: :delete do
-                  =icon('fas','trash-alt')
-              %li
-                = link_to "/tweets/#{tweet.id}/edit", method: :get do
-                  =icon('fas','edit')
+          = link_to "/tweets/#{tweet.id}", class: 'main-icon', method: :get do
+            =icon('fa','align-justify')
+          - if user_signed_in? && current_user.id == tweet.user_id
+            = link_to "/tweets/#{tweet.id}", class:'main-icon', method: :delete, data: { confirm: '本当に削除しますか？' } do
+              =icon('fas','trash-alt')
+            = link_to "/tweets/#{tweet.id}/edit", class:'main-icon', method: :get do
+              =icon('fas','edit')
 
         .main__tweet__content__name
           %a{:href => "/users/#{tweet.user.id}"}
