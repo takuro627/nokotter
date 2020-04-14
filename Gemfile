@@ -76,3 +76,6 @@ gem 'rails_admin', '~> 2.0.0'
 gem 'cancancan', '~> 2.0'
 
 gem 'therubyracer'
+
+gem 'carrierwave'
+gem 'mini_magick'
