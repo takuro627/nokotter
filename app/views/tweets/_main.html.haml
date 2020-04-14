@@ -5,7 +5,7 @@
       .main__tweet__content
         
         .main__tweet__content__image
-          = image_tag tweet.image
+          =image_tag tweet.image.url if tweet.image.present?
         .main__tweet__content__text
           = simple_format(tweet.text)
         .main__tweet__content__more
