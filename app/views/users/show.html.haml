@@ -1,13 +1,6 @@
--# .contents.row
--#   %p
--#     = @nickname
--#     さんの投稿一覧
--#   - @tweets.each do |tweet|
--#     .content_post{:style => "background-image: url(#{tweet.image});"}
--#       = simple_format(tweet.text)
 .wrapper
   .side
-    = render"side"
+    = render"tweets/side"
   .main
     .main__tweet
       %p
