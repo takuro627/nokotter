@@ -2,25 +2,26 @@
   - if user_signed_in?
     %ul.side__list
       %li
-        = link_to "/", class: 'main-icon' do
+        = link_to "/", class: 'side-icon', title: "ホーム画面" do
           =icon('fa', 'home', class:"icon")
+          
       %li
-        = link_to "/users/#{current_user.id}" do
+        = link_to "/users/#{current_user.id}",class: 'side-icon',title:"マイページ" do
           = icon('far', 'smile', class:"icon")
       %li
-        = link_to destroy_user_session_path, method: :delete do
+        = link_to destroy_user_session_path,class: 'side-icon', method: :delete,title:"ログアウト" do
           = icon('fas', 'sign-out-alt', class:"icon")       
       %li
-        = link_to "/tweets/new", class: "post" do
+        = link_to "/tweets/new",class: 'side-icon',title:"新規投稿" do
           =icon('fas', 'pen', class:"icon")
   - else
     .grid-6
-      = link_to new_user_session_path, class: 'post' do
+      = link_to new_user_session_path,class: 'side-icon',title:"ログイン" do
         = icon('fas', 'sign-in-alt', class:"icon")
-      = link_to new_user_registration_path, class: 'post' do
+      = link_to new_user_registration_path,class: 'side-icon' ,title:"新規登録"do
         = icon('fas', 'user-edit', class:"icon")
   - if current_user.try(:admin?)
     %ul.side__list
       %li
-        = link_to "/admin" do
+        = link_to "/admin" ,title:"管理ページ"do
           = icon('fas', 'key', class:"icon")
