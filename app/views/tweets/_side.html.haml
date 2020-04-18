@@ -23,5 +23,5 @@
   - if current_user.try(:admin?)
     %ul.side__list
       %li
-        = link_to "/admin" ,title:"管理ページ"do
+        = link_to "/admin" ,class: 'side-icon',title:"管理ページ"do
           = icon('fas', 'key', class:"icon")
