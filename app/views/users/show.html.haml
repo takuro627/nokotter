@@ -9,7 +9,7 @@
       - @tweets.each do |tweet|
         .main__tweet__content
           .main__tweet__content__right
-            .main__tweer__content__right__text
+            .main__tweet__content__right__text
               = simple_format(tweet.text)
             .main__tweet__content__right__image
               =image_tag tweet.image.url if tweet.image.present?
