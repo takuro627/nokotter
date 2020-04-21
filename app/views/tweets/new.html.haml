@@ -3,13 +3,15 @@
     = render "side"
   .main
     = form_with(model: @tweet, local: true) do |form|
-      投稿する
+      .main__header
+        投稿する
       .main__new
-        .main__new__image
-          = form.label :image, class: 'new-image' do
-            = icon('fas', 'image', class: 'icon')
-            = form.file_field :image, class: 'hidden'
         .main__new__text
           = form.text_area :text, placeholder: "text" , rows: "10", class: "new-text"
-        .main__new__submit
-          = form.submit "SEND", class:"new-submit"
+        .main__new__button
+          .main__new__button__image
+            = form.label :image, class: 'new-image' do
+              = icon('fas', 'image', class: 'icon')
+              = form.file_field :image, class: 'hidden'
+          .main__new__button__submit
+            = form.submit "SEND", id:"new-submit"
