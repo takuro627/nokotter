@@ -17,9 +17,10 @@
 }
 
 .main {
-  width: 50%;
+  width: 700px;
   background-color: green;
-  overflow: scroll;
+  overflow-y: scroll;
+  
   &__header {
    font-size: 20px;
    border-bottom: solid 1px rgb(110, 197, 110);
@@ -49,18 +50,25 @@
       &__right {
         margin: 10px 20px;
         height: auto;
-        width: calc(50vw - 77px);
+        width: 600px;
        
         &__name {
           font-weight: bold;
           color: white;
+          padding-bottom: 5px;
+          width: 95%; 
           a {
             text-decoration: none;
             color: white;
           }
         }
         &__text {
-          color: white;
+          color: white;        
+          p {
+            
+            word-break: break-all;
+          }
+            
         }
         &__image {
           img {
@@ -69,18 +77,71 @@
         }
       }
     }
+    &__content:hover {
+      background-color: rgb(53, 156, 53);
+
+    }
   }
   &__new {
-    &__image {
-      #tweet_image {
-        width: 100%;
+    padding: 10px;
+    textarea {
+      width: 100%;
+    }
+    &__button {
+      display: flex;
+      float: right;
+      margin-top: 5px;
+      &__image {
+        
+        i {
+          font-size: 40px;
+          color: white;
+          cursor: pointer;
+        }
+        i:hover {
+          color: rgb(3, 54, 3);
+        }
+      }
+      &__submit {
+        margin-left: 30px;
+        input#new-submit {
+          cursor: pointer;
+          padding: 5px 20px;
+
+          font-size: 1.2em;
+
+          // 背景色を黒に指定
+
+          background-color: white;
+
+          // 文字色を白に指定
+
+          color: green;
+
+          // submitボタンのを枠を非表示にする
+
+          border-style: none;
+
+          border-radius: 5px;
+
+        }
+        input#new-submit:hover {
+          background-color: rgb(3, 54, 3);
+        }
       }
     }
-    &__text{
-      #tweet_image {
-        width: 100%;
-      }
+    .hidden {
+      display: none;
+    } 
+  }
+  &__delete {
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
     }
+    text-align: center;
+    padding: 50px;
   }
 }
 
@@ -93,4 +154,7 @@
 .side-icon {
   color: green;
   font-size: 50px;
+}
+.side-icon:hover {
+  color: rgb(3, 54, 3);
 }
