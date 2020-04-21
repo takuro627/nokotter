@@ -56,11 +56,15 @@
       }
       &__left {
         padding: 15px;
-        a {
-          text-decoration: none;
+        i {
           color: white;
           font-size: 30px;
         }
+        // a {
+        //   text-decoration: none;
+        //   color: white;
+        //   font-size: 30px;
+        // }
       }
       &__right {
         margin: 10px 20px;
@@ -91,6 +95,11 @@
           img {
             border-radius: 5%;
           }
+        }
+        &__post-time {
+          text-align: right;
+          color: rgb(110, 197, 110);
+          font-size: 14px;
         }
         &__more {
           padding-top: 10px;
@@ -142,11 +151,7 @@
 
           font-size: 1.2em;
 
-          // 背景色を黒に指定
-
           background-color: white;
-
-          // 文字色を白に指定
 
           color: green;
 
@@ -168,14 +173,29 @@
       display: none;
     } 
   }
-  &__delete {
+  &__comfirm {
+    button {
+      cursor: pointer;
+      padding: 5px 20px;
+      font-size: 1.2em;
+      background-color: white;
+      color: green;
+      border-style: none;
+      border-radius: 5px;
+      transition-property: all;
+      transition: 0.3s linear;
+    }
+    
+    button:hover {
+      background-color: rgb(3, 54, 3);
+    }
     a {
       text-decoration: none;
       color: white;
       font-size: 20px;
     }
     text-align: center;
-    padding: 50px;
+    padding: 101px 50px;
   }
 }
 

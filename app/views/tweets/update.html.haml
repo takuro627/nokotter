@@ -2,9 +2,9 @@
   .side
     =render"side"
   .main
-    .main-header
+    .main__header
       更新が完了しました。
-    .main__update
-      =link_to root_path do
+    .main__comfirm
+      =button_to root_path, method: :get do
         ホーム画面へ戻る
 
