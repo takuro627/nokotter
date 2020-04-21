@@ -15,10 +15,12 @@
             = simple_format(@tweet.text)
           .main__tweet__content__right__image
             =image_tag @tweet.image.url if @tweet.image.present?
+          .main__tweet__content__right__post-time
+            =@tweet.updated_at.to_s
           - if user_signed_in? && current_user.id == @tweet.user_id
             .main__tweet__content__right__more
               = link_to "/tweets/#{@tweet.id}", class:'main-icon', method: :delete, class:'main-icon' do
                 =icon('fas','trash-alt')
               = link_to "/tweets/#{@tweet.id}/edit", class:'main-icon', method: :get do
                 =icon('fas','edit')
-
+          

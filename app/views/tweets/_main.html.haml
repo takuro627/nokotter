@@ -15,13 +15,7 @@
               = simple_format(tweet.text)
             .main__tweet__content__right__image
               =image_tag tweet.image.url if tweet.image.present?
-            -# .main__tweet__content__right__more
-            -#   = link_to "/tweets/#{tweet.id}", class: 'main-icon', method: :get do
-            -#     =icon('fa','align-justify')
-            -#   - if user_signed_in? && current_user.id == tweet.user_id
-            -#     = link_to "/tweets/#{tweet.id}", class:'main-icon', method: :delete, data: { confirm: '本当に削除しますか？' } do
-            -#       =icon('fas','trash-alt')
-            -#     = link_to "/tweets/#{tweet.id}/edit", class:'main-icon', method: :get do
-            -#       =icon('fas','edit')
+            .main__tweet__content__right__post-time
+              =tweet.updated_at.to_s
     = paginate(@tweets)
 
