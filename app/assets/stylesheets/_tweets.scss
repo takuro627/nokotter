@@ -30,16 +30,21 @@
   overflow-y: scroll;
   
   &__header {
-   font-size: 20px;
-   border-bottom: solid 1px rgb(110, 197, 110);
+   background-color: green;
+    font-size: 20px;
+   width: 700px;
    padding: 10px;
    color: white;
+   position: fixed;
+   top: 0;
+   border-bottom: solid 1px rgb(110, 197, 110);
    a {
     text-decoration: none;
     color: white;
    }
   }
   &__tweet {
+    padding-top: 51px;
     &__content{
       transition-property: all;
       transition: 0.3s linear;
@@ -73,16 +78,31 @@
           }
         }
         &__text {
-          color: white;        
+          color: white;     
+          padding-bottom: 10px;   
           p {
             
             word-break: break-all;
+
+
           }
-            
         }
         &__image {
           img {
             border-radius: 5%;
+          }
+        }
+        &__more {
+          padding-top: 10px;
+          text-align: center;
+          border-top: solid 1px rgb(110, 197, 110);
+          i {
+            margin: 0 20px;
+            transition-property: all;
+            transition: 0.3s linear;
+          }
+          i:hover {
+            color: rgb(3, 54, 3);
           }
         }
       }
