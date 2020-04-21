@@ -2,6 +2,9 @@
   .side
     =render"side"
   .main
-    %h3
+    .main-header
       更新が完了しました。
-    %a.btn{:href => "/"} 投稿一覧へ戻る
+    .main__update
+      =link_to root_path do
+        ホーム画面へ戻る
+
