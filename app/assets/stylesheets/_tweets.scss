@@ -92,8 +92,17 @@
           }
         }
         &__image {
-          img {
-            border-radius: 5%;
+          a{
+            img {
+              border-radius: 5%;
+                /*画像の表示サイズ*/
+              width: 500px;
+              height: 300px;
+              /*画像表示の仕方*/
+              object-fit: cover;
+              /*画像表樹の基準*/
+              object-position: 0 0;
+            }
           }
         }
         &__post-time {
