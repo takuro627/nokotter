@@ -8,6 +8,8 @@
       POST
     .main__tweet
       .main__tweet__content
+        .main__tweet__content__left
+          =icon('fas','user')
         .main__tweet__content__right
           .main__tweet__content__right__name
             = @tweet.user.nickname
