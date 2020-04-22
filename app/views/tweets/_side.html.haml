@@ -4,24 +4,32 @@
       %li
         = link_to "/", class: 'side-icon', title: "ホーム画面" do
           =icon('fa', 'home', class:"icon")
-          
+        HOME
       %li
         = link_to "/users/#{current_user.id}",class: 'side-icon',title:"マイページ" do
           = icon('far', 'smile', class:"icon")
+        MYPAGE
       %li
         = link_to destroy_user_session_path,class: 'side-icon', method: :delete,title:"ログアウト" do
-          = icon('fas', 'sign-out-alt', class:"icon")       
+          = icon('fas', 'sign-out-alt', class:"icon")      
+        LOGOUT 
       %li
         = link_to "/tweets/new",class: 'side-icon',title:"新規投稿" do
           =icon('fas', 'pen', class:"icon")
+        新規投稿
   - else
-    .grid-6
-      = link_to new_user_session_path,class: 'side-icon',title:"ログイン" do
-        = icon('fas', 'sign-in-alt', class:"icon")
-      = link_to new_user_registration_path,class: 'side-icon' ,title:"新規登録"do
-        = icon('fas', 'user-edit', class:"icon")
+    %ul.side__list
+      %li
+        = link_to new_user_session_path,class: 'side-icon',title:"ログイン" do
+          = icon('fas', 'sign-in-alt', class:"icon")
+        LOGIN
+      %li
+        = link_to new_user_registration_path,class: 'side-icon' ,title:"新規登録"do
+          = icon('fas', 'user-edit', class:"icon")
+        新規登録
   - if current_user.try(:admin?)
     %ul.side__list
       %li
         = link_to "/admin" ,class: 'side-icon',title:"管理ページ"do
           = icon('fas', 'key', class:"icon")
+        管理画面
