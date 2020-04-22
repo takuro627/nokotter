@@ -17,7 +17,8 @@
             .main__tweet__content__right__text
               = simple_format(tweet.text)
             .main__tweet__content__right__image
-              =image_tag tweet.image.url if tweet.image.present?
+              %a{"data-lightbox" => tweet.id, :href => tweet.image.url}
+                =image_tag tweet.image.url if tweet.image.present?
             .main__tweet__content__right__post-time
               =tweet.updated_at.to_s
             - if user_signed_in? && current_user.id == tweet.user_id
