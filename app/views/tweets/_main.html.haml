@@ -18,5 +18,6 @@
                 =image_tag tweet.image.url if tweet.image.present?
             .main__tweet__content__right__post-time
               =tweet.updated_at.to_s
-    = paginate(@tweets)
+    .main__pagenation
+      = paginate(@tweets)
 
