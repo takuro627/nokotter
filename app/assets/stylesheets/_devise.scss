@@ -1,0 +1,47 @@
+.contents {
+  h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.container {
+  
+  padding: 10px 30px;
+  background-color: green;
+  width: 400px;
+  margin: 100px auto 0;
+
+  label {
+    color: white;
+  }
+}
+
+.field {
+  margin: 15px 0; 
+  input {
+  width: 100%;
+  }
+  em {
+    color:  rgb(110, 197, 110);
+  }
+}
+
+.actions {
+  margin: 30px;
+  text-align: center;
+  input#devise-button {
+    cursor: pointer;
+    padding: 10px 60px;
+    font-size: 1.2em;
+    background-color: white;
+    color: green;
+    border-style: none
+    
+  }
+}
