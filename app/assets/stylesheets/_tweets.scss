@@ -65,11 +65,6 @@
           color: white;
           font-size: 30px;
         }
-        // a {
-        //   text-decoration: none;
-        //   color: white;
-        //   font-size: 30px;
-        // }
       }
       &__right {
         margin: 10px 20px;
@@ -90,10 +85,7 @@
           color: white;     
           padding-bottom: 10px;   
           p {
-            
             word-break: break-all;
-
-
           }
         }
         &__image {
@@ -101,8 +93,8 @@
             img {
               border-radius: 5%;
                 /*画像の表示サイズ*/
-              width: 500px;
-              height: 300px;
+              width: 600px;
+              height: 360px;
               /*画像表示の仕方*/
               object-fit: cover;
               /*画像表樹の基準*/
@@ -210,6 +202,13 @@
     }
     text-align: center;
     padding: 101px 50px;
+  }
+  &__pagenation {
+    text-align: center;
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 }
 
