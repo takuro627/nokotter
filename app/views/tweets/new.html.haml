@@ -14,8 +14,8 @@
          
         .main__new__button
           .main__new__button__image
-            = form.label :image, class: 'new-image' do
+            = form.label :image, class: 'new-image'do
               = icon('fas', 'image', class: 'icon')
-              = form.file_field :image, class: 'hidden'
+              = form.file_field :image, class: 'hidden',id: 'tweet_image'
           .main__new__button__submit
             = form.submit "SEND", id:"new-submit"
