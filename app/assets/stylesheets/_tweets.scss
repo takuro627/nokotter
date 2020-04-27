@@ -16,6 +16,12 @@
   text-align: center;
   padding: 0 20px;
   li {
+    i {
+      color: green;
+      font-size: 50px;
+      text-decoration: none;
+    }
+
     transition-property: all;
     transition: 0.3s linear;
     font-size: 20px;
