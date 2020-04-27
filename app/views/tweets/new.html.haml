@@ -7,7 +7,11 @@
         投稿する
       .main__new
         .main__new__text
-          = form.text_area :text, placeholder: "text" , rows: "10", class: "new-text"
+          = form.text_area :content, placeholder: "text" , rows: "10", class: "new-text"
+        .main__new__preview
+          = image_tag '/images/icons/noimage-420x273.jpg',id:'preview_image'
+            
+         
         .main__new__button
           .main__new__button__image
             = form.label :image, class: 'new-image' do

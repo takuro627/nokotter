@@ -12,7 +12,7 @@
             .main__tweet__content__right__name
               = tweet.user.nickname
             .main__tweet__content__right__text
-              = simple_format(tweet.text)
+              = simple_format(tweet.content)
             .main__tweet__content__right__image
               %a{"data-lightbox" => tweet.id, :href => tweet.image.url}
                 =image_tag tweet.image.url if tweet.image.present?
