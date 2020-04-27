@@ -132,6 +132,21 @@
     textarea {
       width: 100%;
     }
+    &__preview {
+      justify-content: center;
+      display: flex;
+      
+      img {
+        border-radius: 5%;
+          /*画像の表示サイズ*/
+        width: 500px;
+        height: 300px;
+        /*画像表示の仕方*/
+        object-fit: cover;
+        /*画像表樹の基準*/
+        object-position: 0 0;
+      }
+    }
     &__button {
       display: flex;
       float: right;
