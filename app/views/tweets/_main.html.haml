@@ -5,8 +5,9 @@
     - @tweets.each do |tweet|
       .main__tweet__content
         .main__tweet__content__left
-          = link_to "/users/#{tweet.user.id}" do
-            =icon('fas','user')
+          - provide(:title, tweet.user.nickname) 
+          %h1
+            = gravatar_for tweet.user
         = link_to "/tweets/#{tweet.id}" do
           .main__tweet__content__right
             .main__tweet__content__right__name

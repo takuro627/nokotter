@@ -8,7 +8,10 @@
       - @tweets.each do |tweet|
         .main__tweet__content
           .main__tweet__content__left
-            =icon('fas','user')
+            - provide(:title, @user.nickname) 
+            %h1
+              = gravatar_for @user
+
           .main__tweet__content__right
             .main__tweet__content__right__name
               = tweet.user.nickname
