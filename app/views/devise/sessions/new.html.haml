@@ -1,6 +1,6 @@
 .contents.row
   .container
-    %h2 Log in
+    %h2 ログイン
     = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
       .field
         = f.label :email
@@ -16,7 +16,7 @@
           %br/
           = f.check_box :remember_me
       .actions
-        = f.submit "Log in", id:'devise-button'
+        = f.submit "ログイン", id:'devise-button'
     = render "devise/shared/links"
 
 

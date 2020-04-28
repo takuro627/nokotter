@@ -1,11 +1,11 @@
 .contents.row
   .container
-    %h2 Sign up
+    %h2 新規登録
     = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
       = devise_error_messages!
       .field
         = f.label :nickname
-        %em (12 characters maximum)
+        %em (最大１２文字)
         %br/
         = f.text_field :nickname, autofocus: true, maxlength: "12"
       .field
@@ -24,6 +24,6 @@
         %br/
         = f.password_field :password_confirmation, autocomplete: "off"
       .actions
-        = f.submit "Sign up", id:'devise-button'
+        = f.submit "登録", id:'devise-button'
 
     = render "devise/shared/links"
