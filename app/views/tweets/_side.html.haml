@@ -26,7 +26,7 @@
       = link_to new_user_registration_path,class: 'side-icon' ,title:"新規登録"do
         %li
           = icon('fas', 'user-edit', class:"icon")
-        新規登録
+          新規登録
   - if current_user.try(:admin?)
     %ul.side__list
       = link_to "/admin" ,class: 'side-icon',title:"管理ページ"do
