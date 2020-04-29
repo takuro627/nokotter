@@ -28,6 +28,6 @@
                   =icon('fas','trash-alt')
                 = link_to  "/tweets/#{tweet.id}/edit", class:'main-icon', method: :get do
                   =icon('fas','edit')
-            
-      = paginate(@tweets)
+      .main__pagenation
+        = paginate(@tweets)
 
