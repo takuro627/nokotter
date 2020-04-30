@@ -57,6 +57,7 @@
   &__tweet {
     padding-top: 51px;
     &__content{
+      cursor: pointer;
       transition-property: all;
       transition: 0.3s linear;
       display: flex;
