@@ -8,17 +8,19 @@
           - provide(:title, tweet.user.nickname) 
           %h1
             = gravatar_for tweet.user
-        = link_to "/tweets/#{tweet.id}" do
-          .main__tweet__content__right
-            .main__tweet__content__right__name
-              = tweet.user.nickname
-            .main__tweet__content__right__text
-              = simple_format(tweet.content)
-            .main__tweet__content__right__image
-              %a{"data-lightbox" => tweet.id, :href => tweet.image.url}
-                =image_tag tweet.image.url if tweet.image.present?
-            .main__tweet__content__right__post-time
-              =tweet.updated_at.to_s
+        
+        .main__tweet__content__right
+          .main__tweet__content__right__name
+            = tweet.user.nickname
+          .main__tweet__content__right__text
+            = simple_format(tweet.content)
+          .main__tweet__content__right__image
+            %a{"data-lightbox" => tweet.id, :href => tweet.image.url}
+              =image_tag tweet.image.url if tweet.image.present?
+          .main__tweet__content__right__link
+            =link_to "投稿詳細 >","/tweets/#{tweet.id}"
+          .main__tweet__content__right__post-time
+            =tweet.updated_at.to_s
     .main__pagenation
       = paginate(@tweets)
 
