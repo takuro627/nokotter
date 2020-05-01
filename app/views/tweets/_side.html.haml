@@ -1,7 +1,7 @@
 .side
   - if user_signed_in?
     %ul.side__list
-      = link_to tweets_path , class: 'side-icon', title: "ホーム画面" do
+      = link_to "/", class: 'side-icon', title: "ホーム画面" do
         %li
           =icon('fa', 'home', class:"icon")
           HOME

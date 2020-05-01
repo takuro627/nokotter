@@ -31,10 +31,6 @@ class TweetsController < ApplicationController
     tweet.destroy
   end
 
-  def top
-    @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(10)
-  end
-
   private
   def tweet_params
     params.require(:tweet).permit(:image, :text).merge(user_id: current_user.id)
@@ -50,7 +46,7 @@ class TweetsController < ApplicationController
 
   def correct_user
     if @current_user.id !=  @tweet.user_id
-     redirect_to tweets_path
+     redirect_to root_path
     end
   end
 
