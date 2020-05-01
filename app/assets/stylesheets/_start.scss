@@ -1,0 +1,17 @@
+.start {
+	background: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+.start p {
+  font-family: 'arial black';
+  line-height: 100vh;
+	color: green;
+	text-align: center;
+	z-index: 9999;
+	font-size: 100px;
+}
