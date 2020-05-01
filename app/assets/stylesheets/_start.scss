@@ -8,11 +8,10 @@
 	z-index: 9000;
 }
 .start p {
-	position: fixed;
-	left: 37%;
-
-	transform: scale(0.3) translate(-50%, -50%);
-	display: none;
+  font-family: 'arial black';
+  line-height: 100vh;
+	color: green;
+	text-align: center;
 	z-index: 9999;
-	width: 280px;
+	font-size: 100px;
 }
