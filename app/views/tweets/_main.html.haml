@@ -6,12 +6,14 @@
       .main__tweet__content
         .main__tweet__content__left
           - provide(:title, tweet.user.nickname) 
-          %h1
-            = gravatar_for tweet.user
+          = link_to "/users/#{tweet.user.id}" do
+            %h1
+              = gravatar_for tweet.user
         
         .main__tweet__content__right
           .main__tweet__content__right__name
-            = tweet.user.nickname
+            = link_to "/users/#{tweet.user.id}" do
+              = tweet.user.nickname
           .main__tweet__content__right__text
             = simple_format(tweet.content)
           .main__tweet__content__right__image
