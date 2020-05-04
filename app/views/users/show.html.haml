@@ -5,6 +5,9 @@
       = @nickname
       さんの投稿一覧
     .main__tweet
+      = render 'users/stats'
+      = render 'users/follow_form' if user_signed_in?
+
       - @tweets.each do |tweet|
         .main__tweet__content
           .main__tweet__content__left
@@ -28,6 +31,7 @@
                   =icon('fas','trash-alt')
                 = link_to  "/tweets/#{tweet.id}/edit", class:'main-icon', method: :get do
                   =icon('fas','edit')
+
       .main__pagenation
         = paginate(@tweets)
 
