@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   resources :tweets do
     get 'top', to: 'tweets#top'
   end
-  resources :users, only: :show
+  resources :users, only: :show do
+    
+    member do
+      get :following, :followers
+    end
+  end  
+  resources :relationships,only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
