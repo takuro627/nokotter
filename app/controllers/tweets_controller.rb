@@ -37,7 +37,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:image, :text).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:image, :content).merge(user_id: current_user.id)
   end
 
   def set_tweet
@@ -49,7 +49,8 @@ class TweetsController < ApplicationController
   end
 
   def correct_user
-    if @current_user.id !=  @tweet.user_id
+    tweet = Tweet.find(params[:id])
+    if @current_user.id !=  tweet.user.id
      redirect_to tweets_path
     end
   end
