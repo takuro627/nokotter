@@ -111,6 +111,8 @@
         &__image {
           a{
             img {
+              border: solid 1px $subColor;
+              background-color: #ffffff;
               border-radius: 5%;
                 /*画像の表示サイズ*/
               width: 600px;
