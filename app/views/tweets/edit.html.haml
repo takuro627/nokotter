@@ -1,6 +1,5 @@
 .wrapper
-  .side
-    = render "side"
+  = render "side"
   .main
     = form_with(model: @tweet, local: true) do |form|
       .main__header
