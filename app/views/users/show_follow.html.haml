@@ -1,0 +1,24 @@
+- provide(:title, @title)
+.row
+  %aside.col-md-4
+    %section.user_info
+      = gravatar_for @user
+      %h1= @user.nickname
+      %span= link_to "view my profile", @user
+      %span
+        %b 投稿:
+        = @user.tweets.count
+    %section.stats
+      = render 'users/stats'
+      - if @users.any?
+        .user_avatars
+          - @users.each do |user|
+            = link_to gravatar_for(user), user
+  .col-md-8
+    %h3= @title
+    - if @users.any?
+      %ul.users.follow
+        - @users.each do |user|
+          = gravatar_for user
+          = user.nickname
+      = paginate(@users)

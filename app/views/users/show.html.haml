@@ -5,11 +5,19 @@
       = @nickname
       さんの投稿一覧
     .main__tweet
+      .main__tweet__profile
+        .main__tweet__profile__image
+          - provide(:title, @user.nickname) 
+          %h1
+            = gravatar_for @user
+          = render 'users/follow_form' if user_signed_in?
+        = render 'users/stats'
+        
       - @tweets.each do |tweet|
         .main__tweet__content
           .main__tweet__content__left
             - provide(:title, @user.nickname) 
-            %h1
+            %h2
               = gravatar_for @user
 
           .main__tweet__content__right
@@ -28,6 +36,7 @@
                   =icon('fas','trash-alt')
                 = link_to  "/tweets/#{tweet.id}/edit", class:'main-icon', method: :get do
                   =icon('fas','edit')
+
       .main__pagenation
         = paginate(@tweets)
 

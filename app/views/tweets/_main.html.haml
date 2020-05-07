@@ -7,7 +7,7 @@
         .main__tweet__content__left
           - provide(:title, tweet.user.nickname) 
           = link_to "/users/#{tweet.user.id}" do
-            %h1
+            %h2
               = gravatar_for tweet.user
         
         .main__tweet__content__right

@@ -5,4 +5,18 @@ class UsersController < ApplicationController
     @nickname = user.nickname
     @tweets = user.tweets.page(params[:page]).per(10).order("created_at DESC")
   end
+
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.page(params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.page(params[:page])
+    render 'show_follow'
+  end
 end
