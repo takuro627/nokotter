@@ -1,8 +1,11 @@
+@import "variable";
+
 * {
   box-sizing: border-box;
 }
 
 .wrapper {
+  background-color: $mainColor;
   display: flex;
   justify-content: center;
   background-image:  url(/images/icons/140147.png);
@@ -12,43 +15,50 @@
 
 .side {
   width: 220px;
-  background-color: red;
+  background-color: $mainColor;
   text-align: center;
   padding: 0 20px;
+  &__list {
+    a {
+      text-decoration: none;
+    }
+  }
   li {
     i {
-      color: green;
-      font-size: 50px;
+      color: $mainWhitecolor;
+      font-size: 30px;
       text-decoration: none;
     }
 
     transition-property: all;
     transition: 0.3s linear;
     font-size: 20px;
-    color: green;
+    color:$mainWhitecolor;
     line-height: 75px;
     text-align: left;
     }
   li:hover {
-    background-color: rgb(252, 116, 116);
+    background-color: $hoverColor;
     border-radius: 30px;
   }
 }
 
 .main {
   width: 700px;
-  background-color: green;
+  background-color: $mainColor;
   overflow-y: scroll;
-  
+  border-left: solid 1px $subColor;
+  border-right: solid 1px $subColor;
   &__header {
-   background-color: green;
+   background-color:$mainColor;
     font-size: 20px;
-   width: 700px;
+   width: 699px;
    padding: 10px;
    color: white;
    position: fixed;
    top: 0;
-   border-bottom: solid 1px rgb(110, 197, 110);
+   border-right: solid 1px $subColor;
+   border-bottom: solid 1px $subColor;
    a {
     text-decoration: none;
     color: white;
@@ -60,7 +70,7 @@
       transition-property: all;
       transition: 0.3s linear;
       display: flex;
-      border-bottom: solid 1px rgb(110, 197, 110);
+      border-bottom: solid 1px $subColor;
       a {
         text-decoration: none;
         color: white;
@@ -118,26 +128,27 @@
         }
         &__post-time {
           text-align: right;
-          color: rgb(110, 197, 110);
+          color: $subColor;
           font-size: 14px;
         }
         &__more {
           padding-top: 10px;
           text-align: center;
-          border-top: solid 1px rgb(110, 197, 110);
+          border-top: solid 1px $subColor;
           i {
             margin: 0 20px;
             transition-property: all;
             transition: 0.3s linear;
           }
-          i:hover {
-            color: rgb(3, 54, 3);
+          a:hover{ 
+            background-color: $hoverColor;
+            border-radius: auto;
           }
         }
       }
     }
     &__content:hover {
-      background-color: rgb(53, 156, 53);
+      background-color: $hoverColor;
 
     }
   }
@@ -165,18 +176,25 @@
       display: flex;
       float: right;
       margin-top: 5px;
+      height: 50px;
+      
       &__image {
-        
+        width: 50px;
+        text-align: center;
+        line-height: 60px;
+        transition-property: all;
+        transition: 0.3s linear;
         i {
-          font-size: 40px;
-          color: white;
+          font-size: 30px;
+          color: #ffffff;
           cursor: pointer;
           transition-property: all;
           transition: 0.3s linear;
         }
-        i:hover {
-          color: rgb(3, 54, 3);
-        }
+      }
+      &__image:hover {
+        background-color: $hoverColor;
+        border-radius: 40px;
       }
       &__submit {
         margin-left: 30px;
@@ -188,11 +206,11 @@
 
           background-color: white;
 
-          color: green;
+          color: $mainColor;
 
-          // submitボタンのを枠を非表示にする
+          border: solid 1px #ffffff;
 
-          border-style: none;
+
 
           border-radius: 5px;
 
@@ -200,7 +218,8 @@
           transition: 0.3s linear;
         }
         input#new-submit:hover {
-          background-color: rgb(3, 54, 3);
+          background-color: $hoverColor;
+          color: #ffffff;
         }
       }
     }
@@ -214,19 +233,21 @@
       padding: 5px 20px;
       font-size: 1.2em;
       background-color: white;
-      color: green;
+      color: $mainColor;
       border-style: none;
       border-radius: 5px;
       transition-property: all;
       transition: 0.3s linear;
+      border: solid 1px #ffffff;
     }
     
     button:hover {
-      background-color: rgb(3, 54, 3);
+      background-color: $hoverColor;
+      color: #ffffff;
     }
     a {
       text-decoration: none;
-      color: white;
+      color: #ffffff;
       font-size: 20px;
     }
     text-align: center;
@@ -235,7 +256,7 @@
   &__pagenation {
     text-align: center;
     a {
-      color: white;
+      color: #ffffff;
       text-decoration: none;
     }
   }
@@ -243,12 +264,6 @@
 
 .main-icon {
   font-size: 20px;
-  color: white;
-  text-decoration: none;
-}
-
-.side-icon {
-  color: green;
-  font-size: 50px;
+  color: #ffffff;
   text-decoration: none;
 }

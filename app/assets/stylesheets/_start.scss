@@ -1,5 +1,5 @@
 .start {
-	background: #FFF;
+	background: #ffffff;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -10,7 +10,7 @@
 .start p {
   font-family: 'arial black';
   line-height: 100vh;
-	color: green;
+	color: $mainColor;
 	text-align: center;
 	z-index: 9999;
 	font-size: 100px;
