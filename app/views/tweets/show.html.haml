@@ -10,7 +10,7 @@
       .main__tweet__content
         .main__tweet__content__left
           - provide(:title, @tweet.user.nickname) 
-          %h1
+          %h2
             = gravatar_for @tweet.user
         .main__tweet__content__right
           .main__tweet__content__right__name
