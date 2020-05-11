@@ -61,12 +61,38 @@ input#follow-btn:hover {
   color:#ffffff;
 }
 
+.row {
+  &__tab{
+    display: flex;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    border-bottom: 1px solid $subColor;
+    &__following {
+      transition-property: all;
+      transition: 0.3s linear;
+      width: 349px;
+      height: 50px;
+    }
+    &__following:hover {
+      background-color: $subColor;
+    }
+    &__followers {
+      transition-property: all;
+      transition: 0.3s linear;
+      width: 349px;
+      height: 50px;
+    }
+    &__followers:hover {
+      background-color: $subColor;
+    }
+    a{
+      color: #ffffff;
+      text-decoration: none;
+    }
 
-h3 {
-  color: #ffffff;
-  border-bottom: 1px solid $subColor;
+  }
 }
-
 
 .user_avatars {
   border-bottom: 1px solid $subColor;
@@ -80,4 +106,11 @@ h3 {
   p {
     color: #ffffff;
   }
+}
+
+
+
+#followTab {
+  color: rgb(189, 63, 189);
+  border-bottom: 3px  solid rgb(189, 63, 189);
 }
