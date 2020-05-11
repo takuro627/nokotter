@@ -24,8 +24,8 @@
               .row__tab__followers{id: "followTab"}
                 Followers
         - if @users.any?
-          .user_avatars
-            - @users.each do |user|
+          - @users.each do |user|  
+            .user_avatars
               = link_to gravatar_for(user), user
               %p
                 = user.nickname
