@@ -7,10 +7,22 @@
       = @user.nickname
     .main__tweet 
       - provide(:title, @title)
-      .row
-        %section.stats
-          = render 'users/stats'
-        %h3= @title
+      .row 
+        .row__tab
+          -if @title == "Following"
+            %a{:href => "#{following_user_path(@user)}"}
+              .row__tab__following{id: "followTab"}
+                Following
+            %a{:href => "#{followers_user_path(@user)}"}
+              .row__tab__followers
+                Followers
+          -else
+            %a{:href => "#{following_user_path(@user)}"}
+              .row__tab__following
+                Following
+            %a{:href => "#{followers_user_path(@user)}"}
+              .row__tab__followers{id: "followTab"}
+                Followers
         - if @users.any?
           .user_avatars
             - @users.each do |user|
