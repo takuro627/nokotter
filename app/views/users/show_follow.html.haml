@@ -10,10 +10,11 @@
       .row
         %section.stats
           = render 'users/stats'
-          %h3= @title
-          - if @users.any?
-            .user_avatars
-              - @users.each do |user|
-                = link_to gravatar_for(user), user
+        %h3= @title
+        - if @users.any?
+          .user_avatars
+            - @users.each do |user|
+              = link_to gravatar_for(user), user
+              %p
                 = user.nickname
-              = paginate(@users)
+            = paginate(@users)
