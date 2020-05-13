@@ -22,7 +22,9 @@
           .main__tweet__content__right__link
             =link_to "投稿詳細 >","/tweets/#{tweet.id}"
           .main__tweet__content__right__post-time
-            =tweet.updated_at.to_s
+            -# =tweet.updated_at.to_s
+            =time_ago_in_words(tweet.updated_at.to_s)
+            前
     .main__pagenation
       = paginate(@tweets)
 
