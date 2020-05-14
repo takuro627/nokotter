@@ -12,7 +12,14 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
+    if Tweet.create(tweet_params)
+      
+      redirect_to tweets_path, notice: "投稿が完了しました"
+    else 
+      flash[:notice] = "投稿に失敗しました"
+      render action: :new
+    end
+      
   end
 
   def edit
