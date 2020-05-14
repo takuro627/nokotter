@@ -1,5 +1,3 @@
-@import "variable";
-
 * {
   box-sizing: border-box;
 }
@@ -57,7 +55,7 @@
    padding: 10px;
    color: white;
    position: fixed;
-   top: 0;
+   top: 20;
    border-right: solid 1px $subColor;
    border-bottom: solid 1px $subColor;
    a {
