@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :tweets do
     get 'top', to: 'tweets#top'
   end
-  resources :users, only: :show do
+  resources :users, only: [:show, :index] do
     
     member do
       get :following, :followers
