@@ -42,6 +42,9 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
+  rescue ActiveRecord::RecordNotFound => e
+    redirect_to tweets_path
+    flash[:notice] = 'この投稿は削除済です'
   end
 
   def top
@@ -54,7 +57,10 @@ class TweetsController < ApplicationController
   end
 
   def set_tweet
-    @tweet = Tweet.find(params[:id])
+    @tweet = Tweet.find(params[:id]) 
+  rescue ActiveRecord::RecordNotFound => e
+    redirect_to tweets_path
+    flash[:notice] = 'この投稿は存在しません'
   end
 
   def move_to_index
