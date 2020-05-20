@@ -4,10 +4,13 @@
     .main__header
       ユーザー一覧
     .main__tweet 
+      
       - @user.each do |user|  
-        .user_avatars
-          = link_to gravatar_for(user), user
-          %p
-            = user.nickname
+        =link_to "users/#{user.id}" do
+          .user_avatars
+            = gravatar_for(user)
+            %p
+              = user.nickname
+
     .main__pagenation
       = paginate(@user)
