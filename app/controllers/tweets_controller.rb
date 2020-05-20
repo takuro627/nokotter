@@ -4,9 +4,10 @@ class TweetsController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    if current_user.following.present?
+    if current_user.nil?
+      @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    elsif current_user.following.present?
       @tweets = current_user.feed.order("created_at DESC").page(params[:page]).per(10)
-    
     else
       redirect_to users_path
       flash[:notice] = "フォローしてみましょう"
