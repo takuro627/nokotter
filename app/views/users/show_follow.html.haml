@@ -25,8 +25,9 @@
                 Followers
         - if @users.any?
           - @users.each do |user|  
-            .user_avatars
-              = link_to gravatar_for(user), user
-              %p
-                = user.nickname
-            = paginate(@users)
+            = link_to "/users/#{user.id}" do
+              .user_avatars
+                = gravatar_for(user)
+                %p
+                  = user.nickname
+              = paginate(@users)
