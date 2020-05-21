@@ -1,24 +1,24 @@
 .contents {
   h2 {
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     font-size: 30px;
   }
   a {
     text-decoration: none;
-    color: white;
+    color: #ffffff;
   }
 }
 
 .container {
   
   padding: 10px 30px;
-  background-color: green;
+  background-color: $mainColor;
   width: 400px;
   margin: 100px auto 0;
 
   label {
-    color: white;
+    color: #ffffff;
   }
 }
 
@@ -28,7 +28,7 @@
   width: 100%;
   }
   em {
-    color:  rgb(110, 197, 110);
+    color: $subColor;
   }
 }
 
@@ -39,8 +39,8 @@
     cursor: pointer;
     padding: 10px 60px;
     font-size: 1.2em;
-    background-color: white;
-    color: green;
+    background-color: #ffffff;
+    color: $mainColor;
     border-style: none
     
   }
