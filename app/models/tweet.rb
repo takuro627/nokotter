@@ -12,4 +12,5 @@ class Tweet < ApplicationRecord
       user_unique_name[1]
     end
   end
+  scope :including_replies, ->(user){where("in_reply_to = ? OR in_reply_to = ? OR user_id = ?", "", "@#{user.id}\-#{user.nickname.sub(/\s/,'-')}", user.id)}
 end
