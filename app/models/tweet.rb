@@ -13,7 +13,7 @@ class Tweet < ApplicationRecord
     end
   end
 
-  def Micropost.including_replies(id)
-    where(in_reply_to: [id, 0]).or(Micropost.where(user_id: id))
+  def Tweet.including_replies(id)
+    where(in_reply_to: [id, 0]).or(Tweet.where(user_id: id))
 end
 end
