@@ -7,6 +7,9 @@
  力士専用SNSです。
  
 # DEMO
+URL
+http://18.180.56.191/
+
 
 デモ用アカウント
 email test@test
