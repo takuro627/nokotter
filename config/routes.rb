@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   end  
   resources :relationships,only: [:create, :destroy]
 
-  post   '/like/:tweet_id' => 'likes#like',   as: 'like'
-  delete '/like/:tweet_id' => 'likes#unlike', as: 'unlike'
+  post   'likes/:tweet_id/create' => "likes#create"
+
+  # delete '/like/:tweet_id' => 'likes#unlike', as: 'unlike'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
