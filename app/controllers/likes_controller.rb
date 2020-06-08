@@ -1,13 +1,14 @@
 class LikesController < ApplicationController
   before_action :set_variables
 
-  def like
-    @like = Like.new(user_id: @current_user_id, tweet_id: params[:tweet_id])
+  def create
+    @like = Like.new(user_id: current_user.id, tweet_id: params[:tweet_id])
     @like.save
+    redirect_to tweets_path
   end
 
-  def unlike
-    @like = Like.find_by(user_id: @current_user.id, tweet_id: params[:tweet_id])
+  def delete
+    @like = Like.find_by(user_id: current_user.id, tweet_id: params[:tweet_id])
     @like.destroy
   end
 
