@@ -1,5 +1,5 @@
 %div.like-link{id: "like-link-#{tweet.id}"}
-  - if Like.find_by(user_id: @current_user_id, tweet_id: @tweet_id)
+  - if Like.find_by(user_id: current_user.id, tweet_id: tweet.id)
     = link_to unlike_path(tweet.id), method: :delete, remote: true do
       .btn.btn-default.glyphicon.glyphicon-heart{id: "heart-#{tweet.id}"}
         = tweet.likes.count.to_s
