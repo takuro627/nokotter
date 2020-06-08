@@ -1,9 +1,6 @@
 %div.like-link{id: "like-link-#{tweet.id}"}
   - if Like.find_by(user_id: current_user.id, tweet_id: tweet.id)
-    = link_to unlike_path(tweet.id), method: :delete, remote: true do
-      .btn.btn-default.glyphicon.glyphicon-heart{id: "heart-#{tweet.id}"}
-        = tweet.likes.count.to_s
+    いいね済み
+
   - else
-    = link_to like_path(tweet.id), method: :post, remote: true do
-      .btn.btn-default.glyphicon.glyphicon-heart-empty{id: "heart-#{tweet.id}"}
-        = tweet.likes.count.to_s
+    = link_to("いいね！","/likes/#{tweet.id}/create",{method: "post"})
