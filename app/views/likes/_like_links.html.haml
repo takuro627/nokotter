@@ -1,6 +1,6 @@
 %div.like-link{id: "like-link-#{tweet.id}"}
   - if Like.find_by(user_id: current_user.id, tweet_id: tweet.id)
-    いいね済み
+    = link_to("いいね！済み","/likes/#{tweet.id}/destroy",{method: "post"})
 
   - else
     = link_to("いいね！","/likes/#{tweet.id}/create",{method: "post"})
