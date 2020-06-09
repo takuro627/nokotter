@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :relationships,only: [:create, :destroy]
 
   post   'likes/:tweet_id/create' => "likes#create"
-  post   'likes/tweet_id/destroy' => 'likes#destroy'
+  post   'likes/:tweet_id/destroy' => 'likes#destroy'
   # delete '/like/:tweet_id' => 'likes#unlike', as: 'unlike'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
