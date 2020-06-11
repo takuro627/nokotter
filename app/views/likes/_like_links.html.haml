@@ -2,6 +2,7 @@
   - if Like.find_by(user_id: current_user.id, tweet_id: tweet.id)
     = link_to "/likes/#{tweet.id}/destroy",{method: "post"} do
       = icon('fa','heart',class:'like-btn-unlike')
+      = @likes_count
 
   - else
     = link_to "/likes/#{tweet.id}/create",{method: "post"} do
