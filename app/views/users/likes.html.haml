@@ -13,12 +13,13 @@
         = render 'users/stats'
         =link_to("投稿","/users/#{@user.id}")
         =link_to("いいね","/users/#{@user.id}/likes")
-      - @tweets.each do |tweet|
+      -@likes.each do |like| 
+      -tweet = Tweet.find_by(id:like.tweet_id)
         .main__tweet__content
           .main__tweet__content__left
-            - provide(:title, @user.nickname) 
+            - provide(:title, tweet.user.nickname) 
             %h2
-              = gravatar_for @user
+              = gravatar_for tweet.user
 
           .main__tweet__content__right
             .main__tweet__content__right__name
@@ -39,6 +40,4 @@
                 = link_to  "/tweets/#{tweet.id}/edit", class:'main-icon', method: :get do
                   =icon('fas','edit')
 
-      .main__pagenation
-        = paginate(@tweets)
 
