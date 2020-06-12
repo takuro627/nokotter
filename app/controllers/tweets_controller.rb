@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
       redirect_to users_path
       flash[:notice] = "フォローしてみましょう"
     end
+  
   end
 
   def new
@@ -38,6 +39,7 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @likes_count = Like.where(tweet_id: @tweet.id).count
   end
 
   def destroy
