@@ -30,7 +30,6 @@
               %a{"data-lightbox" => tweet.id, :href => tweet.image.url}
                 =image_tag tweet.image.url if tweet.image.present?
             .main__tweet__content__right__post-time
-              -# =tweet.updated_at.to_s
               =time_ago_in_words(tweet.updated_at.to_s)
               前
             - if user_signed_in? && current_user.id == tweet.user_id
