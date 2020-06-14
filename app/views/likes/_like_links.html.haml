@@ -1,18 +1,16 @@
-%div.like-link{id: "like-link-#{tweet.id}"}
-  
-  - if user_signed_in?
-  
-    - if Like.find_by(user_id: current_user.id, tweet_id: tweet.id)
-      = link_to "/likes/#{tweet.id}/destroy",{method: "post"} do
-        = icon('fa','heart',class:'like-btn-unlike')
-        = tweet.likes.count
+- if user_signed_in?
 
-    - else
-      = link_to "/likes/#{tweet.id}/create",{method: "post"} do
-        = icon('fa','heart',class:'like-btn')
-        = tweet.likes.count
+  - if Like.find_by(user_id: current_user.id, tweet_id: tweet.id)
+    = link_to "/likes/#{tweet.id}/destroy",method: :post, remote: true do
+      = icon('fa','heart',class:'like-btn-unlike')
+    = tweet.likes.count
 
-  -else
-    = link_to  new_user_session_path do
+  - else
+    = link_to "/likes/#{tweet.id}/create",method: :post, remote: true do
       = icon('fa','heart',class:'like-btn')
-      = tweet.likes.count
+    = tweet.likes.count
+
+-else
+  = link_to  new_user_session_path do
+    = icon('fa','heart',class:'like-btn')
+  = tweet.likes.count
