@@ -19,7 +19,8 @@
           .main__tweet__content__right__image
             %a{"data-lightbox" => @tweet.id, :href => @tweet.image.url}
               =image_tag @tweet.image.url if @tweet.image.present?
-          = render 'likes/like_links', tweet: @tweet
+          .main__tweet__content__right__like{id:"like_button_#{@tweet.id}"}
+            = render 'likes/like_links', tweet: @tweet
           .main__tweet__content__right__post-time
             =time_ago_in_words(@tweet.updated_at.to_s)
             前
