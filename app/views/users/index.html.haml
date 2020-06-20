@@ -3,6 +3,10 @@
   .main
     .main__header
       ユーザー一覧
+      = form_tag(users_path, :method => "get") do
+        %p
+          = text_field_tag :search, params[:search]
+          = submit_tag "Search", :name => nil
     .main__tweet 
       
       - @user.each do |user|  
