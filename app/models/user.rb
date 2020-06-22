@@ -38,4 +38,12 @@ class User < ApplicationRecord
                      OR user_id = :user_id", user_id: id)
   end
 
+  def self.search(search)   
+    if search  
+      where(['name LIKE ?', "%#{search}%"])   
+    else  
+      all  
+    end  
+  end
+    
 end
