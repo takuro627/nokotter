@@ -2,19 +2,29 @@
   = render "tweets/side"
   .main
     .main__header
-      ユーザー一覧
-      = form_tag(users_path, :method => "get") do
-        %p
+      .main__header__title
+        ユーザー一覧
+      .main__header__search
+        = form_tag(users_path, :method => "get") do
           = text_field_tag :search, params[:search]
           = submit_tag "Search", :name => nil
-    .main__tweet 
-      
-      - @user.each do |user|  
-        =link_to "users/#{user.id}" do
-          .user_avatars
-            = gravatar_for(user)
-            %p
-              = user.nickname
-
-    .main__pagenation
-      = paginate(@user)
+    - if @search_users
+      .main__tweet 
+        - @search_users.each do |user|  
+          =link_to "users/#{user.id}" do
+            .user_avatars
+              = gravatar_for(user)
+              %p
+                = user.nickname
+      .main__pagenation
+        = paginate(@search_users)
+    - else 
+      .main__tweet 
+        - @user.each do |user|  
+          =link_to "users/#{user.id}" do
+            .user_avatars
+              = gravatar_for(user)
+              %p
+                = user.nickname
+      .main__pagenation
+        = paginate(@user)
