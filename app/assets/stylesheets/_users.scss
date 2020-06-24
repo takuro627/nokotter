@@ -1,4 +1,13 @@
 .main {
+  &__header{
+    &__search{
+      color: black;
+      input{
+        border: 2px solid $subColor;
+        border-radius: 0.67em;
+      }
+    }
+  }
   &__tweet {
     &__profile{
       border-bottom: 1px solid rgb(112, 87, 112);
