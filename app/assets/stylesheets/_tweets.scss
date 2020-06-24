@@ -49,19 +49,25 @@
   border-left: solid 1px $subColor;
   border-right: solid 1px $subColor;
   &__header {
-   background-color:$mainColor;
+    background-color:$mainColor;
     font-size: 20px;
-   width: 699px;
-   padding: 10px;
-   color: white;
-   position: fixed;
-   top: 20;
-   border-right: solid 1px $subColor;
-   border-bottom: solid 1px $subColor;
-   a {
-    text-decoration: none;
+    width: 699px;
+    padding: 10px;
     color: white;
-   }
+    position: fixed;
+    top: 20;
+    border-right: solid 1px $subColor;
+    border-bottom: solid 1px $subColor;
+    display: flex;
+    justify-content: space-between;
+    &__title{
+      
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  
   }
   &__tweet {
     padding-top: 51px;
