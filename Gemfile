@@ -75,7 +75,7 @@ gem 'font-awesome-sass'
 
 gem 'devise'
 
-gem 'rails_admin', '~> 2.0.0'
+gem 'rails_admin', '~> 2.0.2'
 
 gem 'cancancan', '~> 2.0'
 
